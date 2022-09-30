@@ -2,4 +2,3 @@ import pandas as pd
 import numpy as np
 data=pd.read_csv("../input/police-data/3. Police Data.csv")
 data
-data
