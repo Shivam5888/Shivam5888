@@ -1,0 +1,9 @@
+def domain(id):
+    company=[id.split("@")]
+    for(a,b) in company:
+        return b
+
+#email=(print("Enter Email ID"))
+print("Enter your Email ID")
+email=input()
+print("Your domain name is:" ,domain(email))
