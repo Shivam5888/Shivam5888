@@ -1,4 +1,69 @@
-import pandas as pd
+NUMPY:
+
 import numpy as np
-data=pd.read_csv("../input/police-data/3. Police Data.csv")
-data
+np.linspace(0.01,1,100).reshape(10,10)
+
+import numpy as np
+import pandas as pd
+lis=['a','b','c']
+my_lis=[10,20,30]
+arr=np.array(my_lis)
+d={'a':10,'b':20,'c':30}
+print(pd.Series(data=my_lis)) #It will create the series with the given data
+print(pd.Series(data=my_lis, index=lis)) #It will create the series with the given data and the index name
+from numpy.random import randn
+np.random.seed(101) #It predefines the set of output by going internally with some algorithm
+
+df=pd.DataFrame(randn(3,4),['A','B','C'],['W','X','Y','Z'])
+print(df[['W','Y']]) #Print 2 columns
+print("\n")
+
+df['new']=df['W']+df['Y'] # add 2 columns and make a new column as new
+print(df['new'])
+print("\n")
+
+print(df) #Print new formed dataframe with new column in the last
+print("\n")
+
+# df.drop('new') # This will show error because it needs the axis
+print(df.drop ('new',axis=1)) #This will work since the axis=1 means column (and axis=0 means row.)
+print(df) #This shows that the actual data frame still has new as its column. SO we will use inplace
+
+
+
+
+
+
+
+PANDAS:
+
+d={'A':[1,2,np.nan],'B':[4,np.nan,np.nan],'C':[1,2,3]} #Creating a dataframe
+df=pd.DataFrame(d)
+print(df)
+print("\n")
+print(df.transpose()) #Transpose the matrix
+print("\n")
+​
+​
+print(df.dropna(axis=0))
+print("\n")
+​
+print(df.dropna(axis=1))
+print("\n")
+​
+print(df.dropna(thresh=2)) # Drop rows if less than 2 values are given
+print("\n")
+​
+print(df)
+print(df['A'].fillna(10)) #Print the 10 in missing values of A column.
+print("\n")
+​
+print(df['A'].fillna(value=df['A'].mean())) # Print the mean of A column in missing values of A column.
+print("\n")
+​
+print(df['A'].fillna(method="ffill")) # It will carry forward the back value in the missing cell.
+print("\n")
+​
+print(df['A'].fillna(method="bfill")) # It will carry backward the front value in the missing cell.
+print("\n")
+​
